@@ -12,9 +12,6 @@ jobs:
     - name: Compile
       run: |
         make -f Makefile
-    - name: Create tarball
-      run: |
-          tar -cvf myapp.tgz myapp
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
