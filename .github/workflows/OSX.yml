@@ -9,6 +9,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+    - name: Install SDL2
+      run: |
+        mkdir build
+        cd build
+        git clone --branch SDL2 --depth 1 https://github.com/libsdl-org/SDL.git
+        cmake sdl
+        make
+        sudo make install
     - name: Compile
       run: |
         make -f Makefile
