@@ -1,0 +1,23 @@
+name: OSX
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Compile
+      run: |
+        make -f Makefile
+    - name: Create tarball
+      run: |
+          tar -cvf myapp.tgz myapp
+    - name: Upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: Artifact
+        path: |
+          ./
