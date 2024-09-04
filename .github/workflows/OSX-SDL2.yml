@@ -29,4 +29,4 @@ jobs:
       with:
         name: Artifact
         path: |
-          ./emu.tgz
+          ./build/emu.tgz
