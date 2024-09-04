@@ -13,7 +13,7 @@ GBIT_OBJS = \
 
 # Flags
 CFLAGS = -std=gnu99 -O2 -Wall -Wextra
-LDFLAGS = -lm
+LDFLAGS = -lm -I/opt/homebrew/include/SDL2 -L/opt/homebrew/lib -Wl,-rpath,/opt/homebrew/lib -lSDL2
 
 # SDL
 CFLAGS += -D ENABLE_LCD
